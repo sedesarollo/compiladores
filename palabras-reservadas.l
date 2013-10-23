@@ -3,6 +3,8 @@
 %}
 %%
 "//"[a-zA-Z0-9]*	{printf( "Comentario: %s\n", yytext );}
+[(]			{printf( "Parentesis Abierto: %s\n", yytext );}
+[)]			{printf( "Parentesis Cerrado: %s\n", yytext );}
 [p][a][c][k][a][g][e]	{printf( "package: %s\n", yytext );}
 [i][m][p][o][r][t]	{printf( "import: %s\n", yytext );}
 [p][u][b][l][i][c]	{printf( "public: %s\n", yytext );}
@@ -32,8 +34,8 @@
 [c][o][n][c][a][t]	{printf( "concat: %s\n", yytext );}
 [I][n][t][e][g][e][r]	{printf( "Integer: %s\n", yytext );}
 [t][o][S][t][r][i][n][g][(][)] {printf( "toString: %s\n", yytext );}
-[(]			{printf( "Parentesis Abierto: %s\n", yytext );}
-[)]			{printf( "Parentesis Cerrado: %s\n", yytext );}
+[{]			{printf( "Llave abierta: %s\n", yytext );}
+[}]			{printf( "Llave cerrada: %s\n", yytext );}
 .			{printf( "Error: %s\n", yytext );}
 %%
 main()
