@@ -1,0 +1,21 @@
+%{
+	#include<stdio.h>
+%}
+%token COMENTARIO COMENTARIOM PARENTESISA PARENTESISC PACKAGE IMPORT PUBLIC CLASS STATIC VOID MAIN STRING ARGS SCANNER SYSTEM
+%token IN NEXT CLOSE OUT PRINTLN FOR NEW WHILE ELSE DO INT FLOAT SHORT CHAR LENGTH CONCAT INTEGER TOSTRING IF LLAVEA LLAVEC COMA
+%token PUNTOCOMA PUNTO SALTO TABULADOR
+%%
+
+%%
+#include "palabras-reservadas.l"
+#include "expresiones.l"
+main()
+{
+	yyparse();
+}
+
+yyerror()
+{
+	printf("\n Error de Sintaxis");
+}
+
