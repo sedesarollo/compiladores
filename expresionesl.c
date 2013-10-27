@@ -739,67 +739,67 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 7 "expresionesl.l"
-{printf( "ASIGNACION: %s\n", yytext );}
+{return (ASIGNACION);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 8 "expresionesl.l"
-{printf( "COMPARACION: %s\n", yytext );}
+{return (IGUALIGUAL);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 9 "expresionesl.l"
-{printf( "OPERADORES LOGICOS or: %s\n", yytext );}
+{return (OR);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 10 "expresionesl.l"
-{printf( "OPERADORES LOGICOS !=: %s\n", yytext );}
+{return (DIFERENTE);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 11 "expresionesl.l"
-{printf( "OPERADORES LOGICOS <=: %s\n", yytext );}
+{return (MENORIGUAL);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 12 "expresionesl.l"
-{printf( "OPERADORES LOGICOS >=: %s\n", yytext );}
+{return (MAYORIGUAL);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 13 "expresionesl.l"
-{printf( "OPERADORES LOGICOS: %s\n", yytext );}
+{return (OPERADORESLOGICOS);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 14 "expresionesl.l"
-{printf( "NUMERO: %s\n", yytext );}
+{return (NUMERO);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 15 "expresionesl.l"
-{printf( "IDENTIFICADOR: %s\n", yytext );}
+{return (IDENTIFICADOR);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 16 "expresionesl.l"
-{printf( "PALABRA: %s\n", yytext );}
+{return (PALABRA);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 17 "expresionesl.l"
-{printf( "NUMERO REAL: %s\n", yytext );}
+{return (NUMEROREAL);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 18 "expresionesl.l"
-{printf( "OPERADORES ARITMETICO: %s\n", yytext );}
+{return (OPERADORESARIT);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 19 "expresionesl.l"
-{printf( "ERROR: %s\n", yytext );} 
+{;} 
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
@@ -1803,8 +1803,4 @@ void yyfree (void * ptr )
 #line 20 "expresionesl.l"
 
 
-main()
-{	
-yylex();
-}
 
