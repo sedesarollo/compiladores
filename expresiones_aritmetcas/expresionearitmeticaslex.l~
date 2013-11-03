@@ -1,0 +1,11 @@
+%{
+#include <stdio.h>
+%}
+%%
+"+"						{return (SUMA);}
+[-]						{return (RESTA);}
+"/"						{return (DIVISION);}
+"*"						{return (MULTIPLICACION);}
+[a-zA-Z0-9]*					{return (IDENTIFICADOR);}
+.						{;} 
+%%

@@ -1,0 +1,12 @@
+%{
+#include <stdio.h>
+%}
+palabra		[a-z A-Z]*|[a-z A-Z 0-9]*
+
+%%
+[i][m][p][o][r][t]				{return (IMPORT);}
+[a-zA-Z0-9]*					{return (IDENTIFICADOR);}
+" "						{return (EPSILON);}
+[\.]						{return (PUNTO);}
+.						{;} 
+%%

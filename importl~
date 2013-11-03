@@ -1,0 +1,10 @@
+%{
+#include <stdio.h>
+%}
+%%
+[i][m][p][o][r][t]				{return (IMPORT);}
+[a-zA-Z0-9]*					{return (IDENTIFICADOR);}
+[e][p][s][i][l][o][n]                           {return (EPSILON);}
+[\.]						{return (PUNTO);}
+.						{;} 
+%%

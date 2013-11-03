@@ -3,12 +3,24 @@
 %}
 %token COMENTARIO COMENTARIOM PARENTESISA PARENTESISC PACKAGE IMPORT PUBLIC CLASS STATIC VOID MAIN STRING ARGS SCANNER SYSTEM
 %token IN NEXT CLOSE OUT PRINTLN FOR NEW WHILE ELSE DO INT FLOAT SHORT CHAR LENGTH CONCAT INTEGER TOSTRING IF LLAVEA LLAVEC COMA
-%token PUNTOCOMA PUNTO SALTO TABULADOR
+%token PUNTOCOMA PUNTO SALTO TABULADOR IDENTIFICADOR EPSILON
 %%
+d	: t d PUNTOCOMA
+	|d COMA IDENTIFICADOR
+	| IDENTIFICADOR
+	| EPSILON {printf ("\n Declaracion correcta");}
+	;
+t	:INT
+	|INTEGER
+	|FLOAT
+	|SHORT
+	|CHAR
+	|STRING
+	;
 
 %%
-#include "palabras-reservadas.l"
-#include "expresiones.l"
+#include "expresionesl.c"
+#include "palabras-reservadas.c"
 main()
 {
 	yyparse();
@@ -16,6 +28,4 @@ main()
 
 yyerror()
 {
-	printf("\n Error de Sintaxis");
-}
-
+printf("\n Error de Sintaxis");
