@@ -1,14 +1,15 @@
 %{
 	#include<stdio.h>	
 %}
-%token  COMENTARIO COMENTARIOM EPSILON
-
+%token  COMENTARIOUNALINEA EPSILON COMENTARIOM
 %%
-j	: j q | q |EPSILON  {printf ("\n Declaracion correcta");}
+j	: j q  
+	| q  
+	| EPSILON  {printf ("\n Declaracion correcta");}
 	;
-q	: COMENTARIO | COMENTARIOM{printf ("\n Declaracion correcta");}
+q	: COMENTARIOUNALINEA {printf ("\n Declaracion correcta");} 
+	| COMENTARIOM {printf ("\n Declaracion correcta");}
 	;
-
 %%
 #include "comentariolex.c"
 main()
