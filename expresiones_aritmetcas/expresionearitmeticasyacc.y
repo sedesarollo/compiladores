@@ -16,7 +16,7 @@ e	: e MULTIPLICACION e
 	;
 
 %%
-#include "expresionearitmeticaslex.c"
+#include "expresionesaritmeticaslex.c"
 main()
 {
 	yyparse();

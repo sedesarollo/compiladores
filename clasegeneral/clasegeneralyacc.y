@@ -1,21 +1,29 @@
 %{
-	#include<stdio.h>	
+	#include<stdio.h>
+	int yylex(void);	
 %}
-%token PUBLIC CLASS IDENTIFICADOR LLAVEA LLAVEC STATIC VOID MAIN PARENTESISA PARENTESISC STRING CORCHETEA CORCHETEC PUNTO CLOSE PUNTOCOMA ARGS SALTO
-
+%token PUBLIC CLASS IDENTIFICADORCLASS LLAVEA LLAVEC STATIC VOID MAIN PARENTESISA PARENTESISC STRING CORCHETEA CORCHETEC PUNTO 
+%token CLOSE PUNTOCOMA ARGS ESPACIOS IDENTIFICADOR
+%start z
 %%
-c	: PUBLIC CLASS IDENTIFICADOR LLAVEA SALTO m  LLAVEC  {printf ("\n Declaracion correcta");}
+z	: k ESPACIOS c
+	| z error
+	| error
 	;
-m	: PUBLIC STATIC VOID MAIN PARENTESISA STRING CORCHETEA CORCHETEC ARGS PARENTESISA LLAVEA SALTO p LLAVEC  {printf ("\n Declaracion correcta");}
+k	: 
+c	: PUBLIC CLASS IDENTIFICADORCLASS LLAVEA ESPACIOS m ESPACIOS LLAVEC ESPACIOS {printf ("\n Declaracion 1 correcta");}
 	;
-p	: p s 
-	| s  {printf ("\n Declaracion correcta");}
+m	: PUBLIC STATIC VOID MAIN PARENTESISA STRING CORCHETEA CORCHETEC ARGS PARENTESISC LLAVEA ESPACIOS p ESPACIOS LLAVEC {printf ("\n Declaracion 2 correcta");}
 	;
-s	: IDENTIFICADOR PUNTO CLOSE PARENTESISA PARENTESISC PUNTOCOMA {printf ("\n Declaracion correcta");}
+p	: p ESPACIOS s {printf ("\n Declaracion 3 correcta");}
+	| s {printf ("\n Declaracion 4 correcta");}
+	;
+s	: IDENTIFICADOR PUNTO CLOSE PARENTESISA PARENTESISC PUNTOCOMA {printf ("\n Declaracion 5 correcta");}
 	;
 %%
 #include "clasegenerallex.c"
-main()
+#include "/home/ricardo/facultad/compiladores-I/compiladores-I-TP/"
+int main()
 {
 	yyparse();
 }

@@ -1,9 +1,10 @@
 %{
 #include <stdio.h>
 %}
+PALABRA 	[a-zA-Z0-9]*
+ESPACIOS 	[\t\n]
 %%
-("//"[a-zA-Z0-9]*)				{return (COMENTARIO);}
-("/*"[a-zA-Z0-9]*|[a-zA-Z0-9 "\n"]*"*/")	{return (COMENTARIOM);}
-""			                          {return (EPSILON);}
-.					{;} 
-%%
+["//"][PALABRA]						{return (COMENTARIOUNALINEA);}
+'\0'		 		                       	{return (EPSILON);}
+(["/*"]({ESPACIOS}*{PALABRA}*{ESPACIOS}*)["*/"])	{return (COMENTARIOM);}
+.					        	{;}

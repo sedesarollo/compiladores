@@ -1,6 +1,6 @@
-#line 2 "expresionearitmeticaslex.c"
+#line 2 "expresionesaritmeticaslex.c"
 
-#line 4 "expresionearitmeticaslex.c"
+#line 4 "expresionesaritmeticaslex.c"
 
 #define  YY_INT_ALIGNED short int
 
@@ -454,7 +454,7 @@ char *yytext;
 #line 1 "expresionearitmeticaslex.l"
 #line 2 "expresionearitmeticaslex.l"
 #include <stdio.h>
-#line 458 "expresionearitmeticaslex.c"
+#line 458 "expresionesaritmeticaslex.c"
 
 #define INITIAL 0
 
@@ -638,7 +638,7 @@ YY_DECL
     
 #line 4 "expresionearitmeticaslex.l"
 
-#line 642 "expresionearitmeticaslex.c"
+#line 642 "expresionesaritmeticaslex.c"
 
 	if ( !(yy_init) )
 		{
@@ -756,7 +756,7 @@ YY_RULE_SETUP
 #line 11 "expresionearitmeticaslex.l"
 ECHO;
 	YY_BREAK
-#line 760 "expresionearitmeticaslex.c"
+#line 760 "expresionesaritmeticaslex.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

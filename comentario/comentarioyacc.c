@@ -101,9 +101,9 @@ extern int yydebug;
    /* Put the tokens into the symbol table, so that GDB and other debuggers
       know about them.  */
    enum yytokentype {
-     COMENTARIO = 258,
-     COMENTARIOM = 259,
-     EPSILON = 260
+     COMENTARIOUNALINEA = 258,
+     EPSILON = 259,
+     COMENTARIOM = 260
    };
 #endif
 
@@ -356,7 +356,7 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  6
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   7
+#define YYLAST   8
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  6
@@ -417,14 +417,14 @@ static const yytype_uint8 yyprhs[] =
 /* YYRHS -- A `-1'-separated list of the rules' RHS.  */
 static const yytype_int8 yyrhs[] =
 {
-       7,     0,    -1,     7,     8,    -1,     8,    -1,     5,    -1,
-       3,    -1,     4,    -1
+       7,     0,    -1,     7,     8,    -1,     8,    -1,     4,    -1,
+       3,    -1,     5,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,     7,     7,     7,     7,     9,     9
+       0,     6,     6,     7,     8,    10,    11
 };
 #endif
 
@@ -433,8 +433,8 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "COMENTARIO", "COMENTARIOM", "EPSILON",
-  "$accept", "j", "q", YY_NULL
+  "$end", "error", "$undefined", "COMENTARIOUNALINEA", "EPSILON",
+  "COMENTARIOM", "$accept", "j", "q", YY_NULL
 };
 #endif
 
@@ -464,7 +464,7 @@ static const yytype_uint8 yyr2[] =
    means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     5,     6,     4,     0,     3,     1,     2
+       0,     5,     4,     6,     0,     3,     1,     2
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
@@ -478,7 +478,7 @@ static const yytype_int8 yydefgoto[] =
 #define YYPACT_NINF -4
 static const yytype_int8 yypact[] =
 {
-       2,    -4,    -4,    -4,     0,    -4,    -4,    -4
+       3,    -4,    -4,    -4,     0,    -4,    -4,    -4
 };
 
 /* YYPGOTO[NTERM-NUM].  */
@@ -493,7 +493,7 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       6,     7,     0,     1,     2,     1,     2,     3
+       6,     7,     0,     1,     0,     3,     1,     2,     3
 };
 
 #define yypact_value_is_default(Yystate) \
@@ -504,7 +504,7 @@ static const yytype_uint8 yytable[] =
 
 static const yytype_int8 yycheck[] =
 {
-       0,     4,    -1,     3,     4,     3,     4,     5
+       0,     4,    -1,     3,    -1,     5,     3,     4,     5
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -1310,19 +1310,25 @@ yyreduce:
     {
         case 4:
 /* Line 1778 of yacc.c  */
-#line 7 "comentarioyacc.y"
+#line 8 "comentarioyacc.y"
+    {printf ("\n Declaracion correcta");}
+    break;
+
+  case 5:
+/* Line 1778 of yacc.c  */
+#line 10 "comentarioyacc.y"
     {printf ("\n Declaracion correcta");}
     break;
 
   case 6:
 /* Line 1778 of yacc.c  */
-#line 9 "comentarioyacc.y"
+#line 11 "comentarioyacc.y"
     {printf ("\n Declaracion correcta");}
     break;
 
 
 /* Line 1778 of yacc.c  */
-#line 1326 "comentarioyacc.c"
+#line 1332 "comentarioyacc.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1554,7 +1560,7 @@ yyreturn:
 
 
 /* Line 2041 of yacc.c  */
-#line 12 "comentarioyacc.y"
+#line 13 "comentarioyacc.y"
 
 #include "comentariolex.c"
 main()
