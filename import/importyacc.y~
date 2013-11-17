@@ -11,7 +11,7 @@ l	: IMPORT l PUNTOCOMA
 
 
 %%
-#include "packagelex.c"
+#include "importlex.c"
 main()
 {
 	yyparse();
