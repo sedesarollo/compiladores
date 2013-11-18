@@ -16,6 +16,7 @@
 [I][n][t][e][g][e][r]				{return (INTEGER);}
 [t][o][S][t][r][i][n][g] 			{return (TOSTRING);}
 [n][e][x][t]					{return (NEXT);}
+[0-9]*						{return (NUM);}
 [a-zA-Z0-9]*					{return (IDENTIFICADOR);}
 .						{;} 
 %%

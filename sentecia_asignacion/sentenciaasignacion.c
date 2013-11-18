@@ -68,7 +68,7 @@
 	#include<stdio.h>
 
 /* Line 360 of yacc.c  */
-#line 72 "sentenciaasignacionyacc.c"
+#line 72 "sentenciaasignacion.c"
 
 # ifndef YY_NULL
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -150,7 +150,7 @@ int yyparse ();
 /* Copy the second part of user declarations.  */
 
 /* Line 379 of yacc.c  */
-#line 154 "sentenciaasignacionyacc.c"
+#line 154 "sentenciaasignacion.c"
 
 #ifdef short
 # undef short
@@ -1399,7 +1399,7 @@ yyreduce:
 
 
 /* Line 1778 of yacc.c  */
-#line 1403 "sentenciaasignacionyacc.c"
+#line 1403 "sentenciaasignacion.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

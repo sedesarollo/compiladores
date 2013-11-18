@@ -2,11 +2,10 @@
 #include <stdio.h>
 %}
 %%
-[(]						{return (PARENTESISA);}
-[)]						{return (PARENTESISC);}
-[,]						{return (COMA);}
-[;]						{return (PUNTOCOMA);}
-[.]						{return (PUNTO);}
+"("						{return (PARENTESISA);}
+")"						{return (PARENTESISC);}
+";"						{return (PUNTOCOMA);}
+"."						{return (PUNTO);}
 "["						{return (CORCHETEA);}
 "]"						{return (CORCHETEC);}
 \n						{return (SALTO);}

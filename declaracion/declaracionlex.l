@@ -10,9 +10,11 @@
 [c][h][a][r]					{return (CHAR);}
 [t][o][S][t][r][i][n][g] 			{return (TOSTRING);}
 [f][l][o][a][t]					{return (FLOAT);}
-[;]						{return (PUNTOCOMA);}
-[,]						{return (COMA);}
+";"						{return (PUNTOCOMA);}
+","						{return (COMA);}
+"["						{return (CORCHETEA);}
+"]"						{return (CORCHETEC);}
 [a-zA-Z0-9]*					{return (IDENTIFICADOR);}
-=						{return (ASIGNACION);}
+"="						{return (ASIGNACION);}
 .						{;} 
 %%

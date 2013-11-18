@@ -4,20 +4,15 @@
 %token IDENTIFICADOR INT  SALTO ASIGNACION CORCHETEA CORCHETEC PARENTESISA PARENTESISC PUNTO PUNTOCOMA
 %token FLOAT SHORT CHAR STRING INTEGER TOSTRING
 %%
-p	: p SALTO s 
-	|s {printf ("\n Declaracion correcta DE LA REGLA P");}
+p	: p  s SALTO					 {printf ("\n Declaracion correcta DE LA REGLA P1");}
+	|s 						 {printf ("\n Declaracion correcta DE LA REGLA P2");}
 	;
-s	: IDENTIFICADOR ASIGNACION g  
-	| IDENTIFICADOR CORCHETEA e CORCHETEA h  {printf ("\n Declaracion correcta DE LA REGLA S");}
+s	: IDENTIFICADOR ASIGNACION e		 	 {printf ("\n Declaracion correcta DE LA REGLA S1");}
+	| IDENTIFICADOR ASIGNACION IDENTIFICADOR	 {printf ("\n Declaracion correcta DE LA REGLA S2");}
+	| IDENTIFICADOR CORCHETEA e CORCHETEC ASIGNACION e PUNTOCOMA {printf ("\n Declaracion correcta DE LA REGLA S3");}
+	| t IDENTIFICADOR ASIGNACION IDENTIFICADOR PUNTO NEXT PARENTESISA PARENTESISC PUNTOCOMA  {printf ("\n Declaracion correcta DE LA REGLA S4");}
 	;
-g	: e PUNTOCOMA
-	| IDENTIFICADOR PUNTOCOMA {printf ("\n Declaracion correcta DE LA REGLA G");}
-	;
-h	: ASIGNACION e
-	| CORCHETEA e CORCHETEC ASIGNACION e PUNTOCOMA {printf ("\n Declaracion correcta DE LA REGLA H");}
-	;
-e	:  t {printf ("\n Declaracion correcta DE LA REGLA H");}
-	;
+
 t	: INT
 	| FLOAT
 	| SHORT
@@ -26,8 +21,8 @@ t	: INT
 	| INTEGER
 	| TOSTRING {printf ("\n Declaracion correcta DE LA REGLA T");}
 	;
-
-
+e	: IDENTIFICADOR  {printf ("\n Declaracion correcta DE LA REGLA E");}
+	;
 
 %%
 #include "sentenciaasignacionlex.c"
